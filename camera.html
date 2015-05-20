@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="treinamentoApp">
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/camera.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+        <title>Treinamento</title>
+    </head>
+    <body ng-controller="cameraController as camera" style="background-color:#B9DDF6;">
+        <div style="margin-right:3em;margin-left:3em;">
+			<button class="btn btn-primary glyphicon glyphicon-chevron-left" ng-click="camera.tela.voltar()" style="width:100%;">Voltar</button>
+			<br>
+			<h1>Câmera</h1>
+			<div>
+				<br>
+					<span>Origem: </span>
+					<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{camera.tela.origem}}
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" ng-click="camera.tela.selecionarOrigem(origem)" ng-repeat="origem in camera.tela.origens">{{origem}}</a></li>
+					</ul>
+					</div>
+				<br>
+					<span>Qualidade: </span>
+					<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{camera.tela.qualidade}}
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" ng-click="camera.tela.selecionarQualidade(qual)" ng-repeat="qual in camera.tela.qualidades">{{qual}}</a></li>
+					</ul>
+					</div>
+				<br>
+					<span>Encoding: </span>
+					<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{camera.tela.encoding}}
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" ng-click="camera.tela.selecionarEncoding(encoding)" ng-repeat="encoding in camera.tela.encodings">{{encoding}}</a></li>
+					</ul>
+					</div>
+				<br>
+				<button class="btn btn-primary" ng-click="camera.tela.buscarFoto()" style="width:100%;">GetPicture</button>
+				<br>
+				<img id="imagem" ng-src={{camera.tela.imagem}} />
+			</div>
+        </div>
+    </body>
+</html>

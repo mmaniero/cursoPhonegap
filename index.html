@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="treinamentoApp">
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"><link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+        <title>Treinamento</title>
+    </head>
+    <body ng-controller="treinamentoController as treinamento" style="background-color:#B9DDF6;">
+        <div>
+			<div style="margin-left:3em;">
+				<h1>Treinamento Phonegap</h1>
+			</div>
+			<ul style="list-style: none;margin-right:3em;">
+			<li>
+				<button type="button" class="btn btn-primary glyphicon glyphicon-chevron-right" ng-click="treinamento.index.dialogs()" style="width:100%;">&nbsp;Dialogs</button>
+			</li>
+			<li>
+				<button type="button" class="btn btn-primary glyphicon glyphicon-chevron-right" ng-click="treinamento.index.camera()" style="width:100%;">&nbsp;Camera</button>
+			</li>
+			<li>
+				<button type="button" class="btn btn-primary glyphicon glyphicon-chevron-right" ng-click="treinamento.index.bussola()" style="width:100%;">&nbsp;Bússola</button>
+			</li>
+			<!--
+			<li>
+				<button type="button" class="btn btn-primary glyphicon glyphicon-chevron-right" style="width:100%;">&nbsp;Item 4</button>
+			</li>
+			-->
+			</ul>
+        </div>
+    </body>
+</html>
